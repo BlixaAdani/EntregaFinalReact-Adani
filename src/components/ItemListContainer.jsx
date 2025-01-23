@@ -4,18 +4,22 @@ import { useParams } from 'react-router-dom';
 const styles = {
     container: {
       display: 'flex',
-      flexWrap: 'wrap',
-      gap: '20px',
-      justifyContent: 'center',
+      flexDirection: 'column',
+      alignItems: 'center'
     },
     item: {
-      border: '1px solid #ddd',
-      padding: '10px',
-      textAlign: 'center',
+      width: '20%',
+      height: '20%',
+      gap: '20px'
     },
-    image: {
-      width: '150px',
-      height: 'auto',
+    card: {
+      image: {
+        height: '100px',
+        objectFit: 'cover',
+      },
+      col: {
+        height: '120px',
+      },
     },
   };
 
@@ -88,29 +92,29 @@ const pastaProducts = [
   
     useEffect(() => {
       const fetchProducts = () => {
-        // Filtra los productos según el categoryId si es necesario
+        
         const filteredProducts = id 
           ? pastaProducts.filter(product => product.categoryId === id) 
-          : pastaProducts; // Si no hay un categoryId, mostrar todos los productos
+          : pastaProducts;
   
-        setProducts(filteredProducts); // Actualiza el estado
+        setProducts(filteredProducts);
       };
   
       fetchProducts();
-    }, [id]); // El useEffect se ejecuta cuando el 'id' cambia (cuando la URL cambia)
+    }, [id]);
   
     if (products.length === 0) {
       return <div>No se encontraron productos.</div>;
     }
   
     return (
-      <div>
-        <h1>Catálogo de productos</h1>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+      <div className='bod'>
+        <h1 style={styles.container}>Catálogo de productos</h1>
+        <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center' }}>
           {products.map((product) => (
             <div key={product.id} style={styles.item}>
               <h3>{product.name}</h3>
-              <img src={product.imagePath} alt={product.name} style={styles.image} />
+              <img src={product.imagePath} alt={product.name} style={styles.card.image} />
               <p>{product.description}</p>
               <a href={`/item/${product.id}`}>Ver detalles</a>
             </div>

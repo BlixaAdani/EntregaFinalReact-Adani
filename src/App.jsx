@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Reel from '/src/components/Home.jsx'
+import Reel from '/src/components/Reel.jsx'
 import ItemListContainer from '/src/components/ItemListContainer.jsx';
 import ItemDetailContainer from '/src/components/ItemDetailContainer.jsx';
 import Navbar from '/src/components/Navbar.jsx';
@@ -12,9 +12,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Reel />} />
-        <Route path="/itemlist/:id" element={<ItemListContainer />} />
+        <Route path="/ItemListContainer" element={<ItemListContainer />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
-        <Route path="/contact" element={Contact} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>
