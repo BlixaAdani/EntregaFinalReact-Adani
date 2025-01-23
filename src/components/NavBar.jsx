@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import ravioliLogo from '/src/assets/ravioli.png';
 import CartWidget from './CartWidget';
+import Categories from './Categories.jsx';
 
 function NavBar() {
   return (
@@ -26,12 +27,10 @@ function NavBar() {
             <Link className="nav-link" to={"/"}>Principal </Link>
             </li>
               <li className="nav-item">
-                <Link className="nav-link" to={"/categories"}>Categories</Link>
+                <Link className="nav-link" to={"/Categories"}>Categories</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
-                  Contacto
-                </Link>
+                <Link className="nav-link" to={"/Contact"}>Contacto</Link>
               </li>
             </ul>
             <CartWidget className="cart-widget" />
