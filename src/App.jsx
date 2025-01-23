@@ -1,20 +1,20 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Home from './components/Home';
-import Categories from './components/Categories';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Reel from '/src/components/Home.jsx'
+import ItemListContainer from '/src/components/ItemListContainer.jsx';
+import ItemDetailContainer from '/src/components/ItemDetailContainer.jsx';
+import Navbar from '/src/components/Navbar.jsx';
+import Contact from '/src/components/Contact.jsx'
+import Footer from '/src/components/Footer.jsx'
 
 function App() {
   return (
     <Router>
-      <NavBar />
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/categories/:itemId" element={<Categories />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<Reel />} />
+        <Route path="/itemlist/:id" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="/contact" element={Contact} />
       </Routes>
       <Footer />
     </Router>
