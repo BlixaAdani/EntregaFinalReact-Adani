@@ -23,9 +23,7 @@ function NavBar() {
           <div className="d-flex justify-content-between w-100 align-items-center">
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Principal
-                </Link>
+                <Link className="nav-link" to="/">Principal</Link>
               </li>
               <li className="nav-item">
               <Link className="nav-link" to="/ItemListContainer">Categories</Link>

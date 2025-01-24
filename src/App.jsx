@@ -9,15 +9,16 @@ import Footer from '/src/components/Footer.jsx'
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Reel />} />
-        <Route path="/ItemListContainer" element={<ItemListContainer />} />
-        <Route path="/item/:id" element={<ItemDetailContainer />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
-    </Router>
+  <Navbar />
+  <Routes>
+    <Route path="/" element={<Reel />} />
+    <Route path="/items" element={<ItemListContainer />} />
+    <Route path="/item/:id" element={<ItemDetailContainer />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="*" element={<div>404: Page Not Found</div>} />
+  </Routes>
+  <Footer />
+</Router>
   );
 }
 

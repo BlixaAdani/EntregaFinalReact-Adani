@@ -1,14 +1,17 @@
-import ItemListContainer from '/src/components/ItemListContainer.jsx'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { pastaProducts } from './pastaProducts';
+import Background from '../assets/1000143398.jpg';
 
 const styles = {
   container: {
+    backgroundImage: `url(${Background})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
-  },
-  productList: {
-    width: '100%',
-    height: '20%',
+    alignItems: 'center',
   },
   card: {
     image: {
@@ -19,6 +22,12 @@ const styles = {
       height: '120px',
     },
   },
+  button: {
+    width: '80px',
+    height: '60px',
+    backgroundColor: 'transparent',
+    color: 'white',
+  },
 };
 
 function ItemDetailContainer() {
@@ -26,28 +35,22 @@ function ItemDetailContainer() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    const foundProduct = ItemListContainer.find(pastaProduct => pastaProduct.id === id);
+    const foundProduct = pastaProducts.find((product) => product.id === id);
     setProduct(foundProduct);
   }, [id]);
 
   if (!product) {
-    return <div>Cargando...</div>;
+    return <div>Cargando detalles del producto...</div>;
   }
 
   return (
-      <div style={styles.container}>
-        <div style={styles.productList} id="product-list">
-          <div style={styles.card}>
-            <img
-              src="example.jpg"
-              alt="Product"
-              style={styles.card.image}
-            />
-            <div style={styles.card.col}>
-            </div>
-          </div>
-        </div>
+    <div style={styles.container}>
+      <div>
+        <h2>{product.name}</h2>
+        <img src={product.imagePath} alt={product.name} style={styles.card.image} />
+        <p>{product.description}</p>
       </div>
+    </div>
   );
 }
 
