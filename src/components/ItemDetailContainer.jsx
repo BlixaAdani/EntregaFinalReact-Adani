@@ -1,32 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { pastaProducts } from './pastaProducts';
-import Background from '../assets/1000143398.jpg';
+import { pastaProducts } from '/src/components/pastaProducts.jsx';
 
 const styles = {
   container: {
-    backgroundImage: `url(${Background})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
     display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: '20px',
   },
   card: {
     image: {
-      height: '600px',
+      height: '100px',
       objectFit: 'cover',
     },
     col: {
       height: '120px',
     },
-  },
-  button: {
-    width: '80px',
-    height: '60px',
-    backgroundColor: 'transparent',
-    color: 'white',
   },
 };
 
@@ -35,6 +25,7 @@ function ItemDetailContainer() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
+    
     const foundProduct = pastaProducts.find((product) => product.id === id);
     setProduct(foundProduct);
   }, [id]);
