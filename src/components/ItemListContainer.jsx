@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { pastaProducts } from '/src/components/pastaProducts.jsx';
+import { Link } from 'react-router-dom'
 
 const styles = {
   title: {
@@ -51,7 +52,7 @@ function ItemListContainer() {
             <h3>{product.name}</h3>
             <img src={product.imagePath} alt={product.name} style={styles.card.image} />
             <p>{product.description}</p>
-            <a href={`/item/${product.id}`}>Ver detalles</a>
+            <Link to={`/item/${product.id}`}>Ver detalles</Link>
           </div>
         ))}
       </div>

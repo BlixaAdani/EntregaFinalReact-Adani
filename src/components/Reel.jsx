@@ -1,6 +1,6 @@
-import img1 from 'C:/Users/Administrator/Desktop/BLIXA/Blixadanix-Coder/raviolandia/src/assets/DSC_0444.jpg';
-import img2 from 'C:/Users/Administrator/Desktop/BLIXA/Blixadanix-Coder/raviolandia/src/assets/DSC_0510.jpg';
-import img3 from 'C:/Users/Administrator/Desktop/BLIXA/Blixadanix-Coder/raviolandia/src/assets/DSC_0488.jpg';
+import img1 from '/src/assets/DSC_0444.jpg';
+import img2 from '/src/assets/DSC_0510.jpg';
+import img3 from '/src/assets/DSC_0488.jpg';
 
 const Reel = () => {
   return (
