@@ -1,22 +1,27 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { pastaProducts } from '/src/components/pastaProducts.jsx';
+import { pastaProducts } from '../components/pastaProducts.jsx';
+import ItemQuantitySelector from '/src/components/ItemQuantitySelector.jsx';
 
 const styles = {
   container: {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
     gap: '20px',
   },
+  image: {
+    height: '200px',
+    objectFit: 'cover',
+    borderRadius: '10px',
+  },
   card: {
-    image: {
-      height: '100px',
-      objectFit: 'cover',
-    },
-    col: {
-      height: '120px',
-    },
+    padding: '20px',
+    border: '1px solid #ccc',
+    borderRadius: '10px',
+    maxWidth: '400px',
+    textAlign: 'center',
+    backgroundColor: '#fff',
   },
 };
 
@@ -25,21 +30,28 @@ function ItemDetailContainer() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    
-    const foundProduct = pastaProducts.find((product) => product.id === id);
-    setProduct(foundProduct);
+    const productId = parseInt(id, 10);
+    if (!isNaN(productId)) {
+      const foundProduct = pastaProducts.find((product) => product.id === productId);
+      setProduct(foundProduct || false);
+    }
   }, [id]);
 
-  if (!product) {
+  if (product === null) {
     return <div>Cargando detalles del producto...</div>;
+  }
+
+  if (!product) {
+    return <div>Producto no encontrado.</div>;
   }
 
   return (
     <div style={styles.container}>
-      <div>
+      <div style={styles.card}>
         <h2>{product.name}</h2>
-        <img src={product.imagePath} alt={product.name} style={styles.card.image} />
+        <img src={product.imagePath} alt={product.name} style={styles.image} />
         <p>{product.description}</p>
+        <ItemQuantitySelector stock={product.stock} />
       </div>
     </div>
   );
