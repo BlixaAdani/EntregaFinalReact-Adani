@@ -1,13 +1,9 @@
-import { useState, useContext } from "react";
-import { CartContext } from "../components/CartContext.jsx";
+import { useState } from "react";
+import { useCart } from "./CartContext"; // 🔹 Importa el hook `useCart`
 
 function ItemQuantitySelector({ product }) {
   const [quantity, setQuantity] = useState(1);
-  const { addToCart } = useContext(CartContext);
-
-  const handleAddToCart = () => {
-    addToCart(product, quantity);
-  };
+  const { addToCart } = useCart(); // 🔹 Usa `useCart()` para acceder al carrito
 
   return (
     <div>
@@ -16,7 +12,7 @@ function ItemQuantitySelector({ product }) {
       </button>
       <span>{quantity}</span>
       <button onClick={() => setQuantity(quantity + 1)}>+</button>
-      <button onClick={handleAddToCart}>Agregar al carrito</button>
+      <button onClick={() => addToCart(product, quantity)}>Agregar al carrito</button>
     </div>
   );
 }
