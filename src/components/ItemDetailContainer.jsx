@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { pastaProducts } from '../components/pastaProducts.jsx';
 import ItemQuantitySelector from '/src/components/ItemQuantitySelector.jsx';
+import bgImage from '/src/assets/1000143398.jpg';
 
 const styles = {
   container: {
@@ -47,13 +48,13 @@ function ItemDetailContainer() {
   }
 
   return (
-    <div style={styles.container}>
-      <div style={styles.card}>
+    <div style={styles.container} className='bod d-flex justify-content-center align-items-center vh-100'>
+      <div style={styles.card} className='shadow-lg p-3 mb-5 bg-white rounded text-center'>
         <h2>{product.name}</h2>
-        <img src={product.imagePath} alt={product.name} style={styles.image} />
+        <img src={product.imagePath} alt={product.name} style={styles.image}/>
         <p>{product.description}</p>
-        <ItemQuantitySelector stock={product.stock} />
-        <Link to="/item-list-container">Volver</Link>
+        <ItemQuantitySelector stock={product.stock} className="w-100 my-2"/>
+        <Link to="/item-list-container" className="w-100">Volver</Link>
       </div>
     </div>
   );

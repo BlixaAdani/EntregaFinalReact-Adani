@@ -5,7 +5,7 @@ function CartWidget() {
 
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     return (
-        <div className="cart-widget position-relative">
+        <div className="cart-widget position-relative mt-1">
             <img src="\src\assets\tray-dish-svgrepo-com.svg" alt=""
             style={{width: "30px", height: "50px"}}/>
             
