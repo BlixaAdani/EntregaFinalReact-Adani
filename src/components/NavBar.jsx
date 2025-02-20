@@ -4,7 +4,7 @@ import CartWidget from './CartWidget';
 import Login from './Login';
 
 function NavBar() {
-  const navigate = useNavigate(); // Definir navigate aquí
+  const navigate = useNavigate();
 
   return (
     <nav className="navbar navbar-expand-lg">
@@ -38,7 +38,7 @@ function NavBar() {
             </ul>
 
             <div className="cart-widget" onClick={() => navigate("/cart")} style={{ cursor: "pointer" }}>
-              <CartWidget className='ml-1' />
+              <CartWidget />
             </div>
 
             <Login />
