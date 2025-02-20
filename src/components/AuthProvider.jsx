@@ -1,15 +1,11 @@
-// src/components/AuthProvider.jsx
 import React, { createContext, useState, useContext } from "react";
 
-// Crear contexto de autenticación
-export const AuthContext = createContext(); // 🔹 ¡Exportado correctamente!
+export const AuthContext = createContext();
 
-// Hook personalizado para acceder al contexto
 export function useAuth() {
   return useContext(AuthContext);
 }
 
-// Proveedor de autenticación
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 

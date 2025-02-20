@@ -7,7 +7,8 @@
   background-image: url("/src/assets/1000143398.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; }
+  background-size: cover;
+  height: 45.50rem; }
   .bod .contact-section,
   .bod .contact-info {
     padding: 2rem;
@@ -58,6 +59,9 @@
   .bod .contact-info__text {
     margin-bottom: 0.5rem;
     color: #000000; }
+
+.ml {
+  margin-left: 20px; }
 
 .bg-light {
   background-color: #D9B4A7;

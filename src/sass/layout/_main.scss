@@ -3,6 +3,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    height: 45.50rem;
 
 .contact-section,
 .contact-info {
@@ -65,4 +66,8 @@
   margin-bottom: 0.5rem;
   color: $text-color;
 }
+}
+
+.ml{
+  margin-left: 20px;
 }

@@ -1,9 +1,9 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "./AuthProvider"; // 🔹 Usa `useAuth`, no `AuthContext` directamente.
+import { useAuth } from "./AuthProvider";
 
 function ProtectedRoute({ children, allowedRoles }) {
-  const { user } = useAuth(); // 🔹 Obtiene el usuario desde el hook
+  const { user } = useAuth();
 
   if (!user) {
     return <Navigate to="/login" />;

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 const styles = {
   title: {
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignSelf: 'center',
+    justifySelf: 'center',
   },
   container: {
     display: 'flex',
@@ -45,7 +45,7 @@ function ItemListContainer() {
 
   return (
     <div className='bod'>
-      <h1 className='title'>Catálogo de productos</h1>
+      <h1 className='title text-center'>Catálogo de productos</h1>
       <div style={styles.container}>
         {products.map((product) => (
           <div key={product.id} style={styles.item} className='row row-cols-1'>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { pastaProducts } from '../components/pastaProducts.jsx';
 import ItemQuantitySelector from '/src/components/ItemQuantitySelector.jsx';
@@ -8,7 +9,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: '20px',
+    gap: '30px',
   },
   image: {
     height: '200px',
@@ -52,6 +53,7 @@ function ItemDetailContainer() {
         <img src={product.imagePath} alt={product.name} style={styles.image} />
         <p>{product.description}</p>
         <ItemQuantitySelector stock={product.stock} />
+        <Link to="/item-list-container">Volver</Link>
       </div>
     </div>
   );

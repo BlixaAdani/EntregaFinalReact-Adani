@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import ravioliLogo from '/src/assets/ravioli.png';
 import CartWidget from './CartWidget';
+import Login from './Login';
 
 function NavBar() {
   return (
@@ -34,18 +35,7 @@ function NavBar() {
             </ul>
             <CartWidget className="cart-widget" />
           </div>
-          <form className="d-flex ms-3">
-            <input
-              id="search-input"
-              className="form-control me-2"
-              type="search"
-              placeholder="Buscar"
-              aria-label="Buscar en Raviolandia"
-            />
-            <button className="btn btn-outline-dark" type="submit">
-              Buscar
-            </button>
-          </form>
+          <Login />
         </div>
       </div>
     </nav>

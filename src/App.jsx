@@ -25,7 +25,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/not-authorized" element={<NotAuthorized />} />
             
-            {/* Rutas protegidas */}
             <Route 
               path="/admin" 
               element={<ProtectedRoute element={<AdminDashboard />} allowedRoles={['admin']} />} 
@@ -35,7 +34,6 @@ function App() {
               element={<ProtectedRoute element={<UserDashboard />} allowedRoles={['user', 'admin']} />} 
             />
 
-            {/* Rutas públicas */}
             <Route path="/" element={<Reel />} />
             <Route path="/item-list-container" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer />} />

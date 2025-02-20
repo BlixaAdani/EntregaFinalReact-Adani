@@ -7,13 +7,13 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("Iniciando sesión con:", email, password);
-    // Aquí iría la lógica para autenticación con Firebase
   };
 
   return (
-    <div>
-      <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleLogin}>
+    <div className="ml-3">
+      <h6 className='text-center bg-danger'>Usuario para proveedores</h6>
+      <div>
+      <form onSubmit={handleLogin}  className='d-flex'>
         <input
           type="email"
           placeholder="Correo electrónico"
@@ -26,8 +26,9 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Ingresar</button>
+        <button type="submit" className='bg-dark text-center text-light rounded-circle'>Ingresar</button>
       </form>
+      </div>
     </div>
   );
 }
